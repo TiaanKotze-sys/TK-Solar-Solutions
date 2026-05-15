@@ -1,0 +1,1370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>TK Solar Solutions — Certified Solar Training & Installation | Boksburg, Gauteng</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --navy:   #0B1D3A;
+    --navy2:  #132A52;
+    --blue:   #1A4C96;
+    --sky:    #2E7DD1;
+    --gold:   #E8AC30;
+    --gold2:  #C9931A;
+    --cream:  #F7F4EE;
+    --light:  #EEF2F8;
+    --text:   #1C1C2E;
+    --muted:  #5A6478;
+    --white:  #FFFFFF;
+    --border: #D8DFEA;
+    --green:  #1E8C5A;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    background: var(--white);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+    background: rgba(11,29,58,0.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(232,172,48,0.25);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 5%;
+    height: 68px;
+  }
+  .logo-wrap { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .logo-icon {
+    width: 40px; height: 40px;
+    border: 2px solid var(--gold);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+  }
+  .logo-icon svg { width: 22px; height: 22px; }
+  .logo-text { display: flex; flex-direction: column; }
+  .logo-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--white);
+    letter-spacing: 0.3px;
+    line-height: 1;
+  }
+  .logo-name span { color: var(--gold); }
+  .logo-tagline {
+    font-size: 0.58rem;
+    font-weight: 500;
+    color: rgba(255,255,255,0.4);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 2px;
+  }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    color: rgba(255,255,255,0.65);
+    text-decoration: none;
+    font-size: 0.84rem;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-cta {
+    background: var(--gold);
+    color: var(--navy);
+    font-weight: 700;
+    font-size: 0.82rem;
+    padding: 0.6rem 1.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    letter-spacing: 0.3px;
+    transition: background 0.2s, transform 0.15s;
+    white-space: nowrap;
+  }
+  .nav-cta:hover { background: #f0bb40; transform: translateY(-1px); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    background: var(--navy);
+    display: flex; align-items: center;
+    padding: 8rem 5% 5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-bg-lines {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(30,76,150,0.12) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(30,76,150,0.12) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+  }
+  .hero-glow {
+    position: absolute;
+    top: -200px; right: -200px;
+    width: 700px; height: 700px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(232,172,48,0.1) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .hero-glow2 {
+    position: absolute;
+    bottom: -150px; left: -100px;
+    width: 500px; height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(26,76,150,0.25) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .hero-inner {
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 5rem;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(232,172,48,0.12);
+    border: 1px solid rgba(232,172,48,0.35);
+    color: var(--gold);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 0.45rem 1rem;
+    border-radius: 30px;
+    margin-bottom: 1.75rem;
+  }
+  .hero-badge::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--gold); }
+  h1.hero-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.8rem, 5vw, 4.6rem);
+    font-weight: 800;
+    color: var(--white);
+    line-height: 1.05;
+    margin-bottom: 1.5rem;
+  }
+  h1.hero-headline .accent { color: var(--gold); }
+  .hero-sub {
+    font-size: 1.05rem;
+    font-weight: 300;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.75;
+    max-width: 500px;
+    margin-bottom: 2.5rem;
+  }
+  .hero-checks { list-style: none; margin-bottom: 2.75rem; display: flex; flex-direction: column; gap: 0.7rem; }
+  .hero-checks li {
+    display: flex; align-items: center; gap: 12px;
+    color: rgba(255,255,255,0.8);
+    font-size: 0.93rem;
+    font-weight: 400;
+  }
+  .check {
+    width: 20px; height: 20px;
+    border-radius: 50%;
+    background: rgba(232,172,48,0.15);
+    border: 1.5px solid var(--gold);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .check svg { width: 10px; height: 10px; stroke: var(--gold); stroke-width: 2.5; fill: none; }
+  .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--gold);
+    color: var(--navy);
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 0.9rem 2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    letter-spacing: 0.3px;
+    transition: all 0.2s;
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .btn-primary:hover { background: #f0bb40; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(232,172,48,0.3); }
+  .btn-ghost {
+    border: 1.5px solid rgba(255,255,255,0.25);
+    color: rgba(255,255,255,0.75);
+    font-weight: 500;
+    font-size: 0.9rem;
+    padding: 0.9rem 2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+
+  /* Hero card */
+  .hero-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+  }
+  .hero-card-label {
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--gold);
+    margin-bottom: 1.25rem;
+  }
+  .hc-row {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0.9rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+  .hc-row:last-of-type { border-bottom: none; }
+  .hc-key { font-size: 0.82rem; color: rgba(255,255,255,0.45); font-weight: 400; }
+  .hc-val { font-size: 0.88rem; color: var(--white); font-weight: 600; }
+  .hc-val.gold { color: var(--gold); }
+  .hc-val.green { color: #4ade80; }
+  .hero-card-divider { border: none; border-top: 1px solid rgba(255,255,255,0.07); margin: 1.5rem 0; }
+  .hero-card-contact { display: flex; flex-direction: column; gap: 0.75rem; }
+  .hcc-item { display: flex; align-items: center; gap: 10px; }
+  .hcc-item svg { width: 15px; height: 15px; stroke: var(--gold); stroke-width: 1.8; fill: none; flex-shrink: 0; }
+  .hcc-item span { font-size: 0.83rem; color: rgba(255,255,255,0.6); }
+  .hcc-item strong { color: var(--white); }
+  .hero-card-cta {
+    margin-top: 1.5rem;
+    display: block;
+    text-align: center;
+    background: linear-gradient(135deg, #1E8C5A, #16704A);
+    color: var(--white);
+    font-weight: 700;
+    font-size: 0.88rem;
+    padding: 0.85rem;
+    border-radius: 8px;
+    text-decoration: none;
+    letter-spacing: 0.3px;
+    transition: opacity 0.2s, transform 0.15s;
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+  }
+  .hero-card-cta:hover { opacity: 0.9; transform: translateY(-1px); }
+
+  /* ── STATS STRIP ── */
+  .stats-strip {
+    background: var(--cream);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 2.25rem 5%;
+  }
+  .stats-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+  .stat {
+    text-align: center;
+  }
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: var(--navy);
+    line-height: 1;
+    margin-bottom: 0.35rem;
+  }
+  .stat-num span { color: var(--gold2); }
+  .stat-label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+  }
+  .stat-divider { width: 1px; height: 40px; background: var(--border); }
+
+  /* ── SHARED SECTION STYLES ── */
+  section { padding: 6rem 5%; }
+  .inner { max-width: 1200px; margin: 0 auto; }
+  .section-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--blue);
+    margin-bottom: 1rem;
+  }
+  .section-tag::before { content: ''; width: 24px; height: 2px; background: var(--gold); border-radius: 2px; }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 800;
+    color: var(--navy);
+    line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+  .section-title .accent { color: var(--gold2); }
+  .section-sub {
+    font-size: 0.95rem;
+    color: var(--muted);
+    line-height: 1.75;
+    max-width: 560px;
+  }
+
+  /* ── WHY US ── */
+  .why-sec { background: var(--white); }
+  .why-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+    margin-top: 3.5rem;
+  }
+  .why-list { display: flex; flex-direction: column; gap: 2rem; }
+  .why-item { display: flex; gap: 1.25rem; align-items: flex-start; }
+  .why-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: rgba(232,172,48,0.2);
+    line-height: 1;
+    flex-shrink: 0;
+    width: 48px;
+    text-align: right;
+  }
+  .why-content h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 0.4rem;
+    letter-spacing: 0.2px;
+  }
+  .why-content p { font-size: 0.87rem; color: var(--muted); line-height: 1.7; }
+  .why-right { display: flex; flex-direction: column; gap: 1rem; }
+  .why-feature {
+    background: var(--light);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .why-feature-icon {
+    width: 44px; height: 44px;
+    border-radius: 10px;
+    background: var(--navy);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .why-feature-icon svg { width: 20px; height: 20px; stroke: var(--gold); stroke-width: 1.8; fill: none; }
+  .why-feature h4 { font-size: 0.9rem; font-weight: 700; color: var(--navy); margin-bottom: 0.3rem; }
+  .why-feature p { font-size: 0.83rem; color: var(--muted); line-height: 1.6; }
+
+  /* ── COURSES ── */
+  .courses-sec { background: var(--navy); }
+  .courses-sec .section-title { color: var(--white); }
+  .courses-sec .section-sub { color: rgba(255,255,255,0.45); }
+  .courses-sec .section-tag { color: var(--gold); }
+  .courses-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+  .c-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.25s;
+    display: flex;
+    flex-direction: column;
+  }
+  .c-card:hover {
+    border-color: rgba(232,172,48,0.5);
+    background: rgba(255,255,255,0.07);
+    transform: translateY(-4px);
+  }
+  .c-card-top {
+    padding: 1.75rem;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+  .c-level-badge {
+    display: inline-block;
+    font-size: 0.63rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 0.3rem 0.75rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+  }
+  .level-beginner { background: rgba(30,140,90,0.15); color: #4ade80; border: 1px solid rgba(30,140,90,0.3); }
+  .level-intermediate { background: rgba(232,172,48,0.12); color: var(--gold); border: 1px solid rgba(232,172,48,0.3); }
+  .level-advanced { background: rgba(46,125,209,0.15); color: #7dd3fc; border: 1px solid rgba(46,125,209,0.3); }
+  .c-card-top h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 0.4rem;
+  }
+  .c-duration {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.4);
+    font-weight: 400;
+  }
+  .c-card-body { padding: 1.75rem; flex: 1; display: flex; flex-direction: column; }
+  .c-card-body p { font-size: 0.86rem; color: rgba(255,255,255,0.55); line-height: 1.7; margin-bottom: 1.5rem; flex: 1; }
+  .c-includes { list-style: none; margin-bottom: 1.75rem; display: flex; flex-direction: column; gap: 0.5rem; }
+  .c-includes li {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.65);
+    display: flex; align-items: center; gap: 8px;
+  }
+  .c-includes li::before {
+    content: '';
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+  .c-price-row { display: flex; align-items: baseline; gap: 6px; margin-bottom: 1.25rem; }
+  .c-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--white);
+  }
+  .c-price-label { font-size: 0.78rem; color: rgba(255,255,255,0.3); }
+  .btn-enroll {
+    display: block;
+    text-align: center;
+    background: var(--gold);
+    color: var(--navy);
+    font-weight: 700;
+    font-size: 0.83rem;
+    padding: 0.8rem;
+    border-radius: 6px;
+    text-decoration: none;
+    letter-spacing: 0.3px;
+    transition: all 0.2s;
+  }
+  .btn-enroll:hover { background: #f0bb40; transform: translateY(-1px); }
+
+  /* ── PRODUCTS ── */
+  .products-sec { background: var(--cream); }
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+  .p-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.25s;
+  }
+  .p-card:hover { box-shadow: 0 12px 40px rgba(10,29,58,0.12); transform: translateY(-3px); }
+  .p-card-top {
+    background: var(--navy);
+    padding: 1.5rem 1.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .p-card-top h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--white);
+  }
+  .p-badge {
+    font-size: 0.63rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    padding: 0.3rem 0.75rem;
+    border-radius: 3px;
+    background: rgba(232,172,48,0.15);
+    color: var(--gold);
+    border: 1px solid rgba(232,172,48,0.35);
+  }
+  .p-card-body { padding: 1.75rem; }
+  .p-card-body > p { font-size: 0.87rem; color: var(--muted); line-height: 1.7; margin-bottom: 1.25rem; }
+  .p-feats { list-style: none; margin-bottom: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem; }
+  .p-feats li {
+    font-size: 0.83rem;
+    color: var(--text);
+    display: flex; align-items: flex-start; gap: 10px;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--light);
+  }
+  .p-feats li:last-child { border-bottom: none; padding-bottom: 0; }
+  .p-feats li::before {
+    content: '';
+    width: 16px; height: 16px;
+    border-radius: 50%;
+    background: rgba(26,76,150,0.1);
+    border: 1.5px solid var(--blue);
+    flex-shrink: 0;
+    margin-top: 1px;
+    display: flex; align-items: center; justify-content: center;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 10 10' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolyline points='2,5 4,7 8,3' fill='none' stroke='%231A4C96' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: center; background-size: 10px;
+  }
+  .btn-quote {
+    display: block;
+    text-align: center;
+    background: var(--navy);
+    color: var(--white);
+    font-weight: 700;
+    font-size: 0.83rem;
+    padding: 0.85rem;
+    border-radius: 6px;
+    text-decoration: none;
+    letter-spacing: 0.3px;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-quote:hover { background: var(--navy2); transform: translateY(-1px); }
+
+  /* ── PROCESS ── */
+  .process-sec { background: var(--white); }
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+    margin-top: 3.5rem;
+    position: relative;
+  }
+  .process-steps::before {
+    content: '';
+    position: absolute;
+    top: 28px;
+    left: 10%;
+    right: 10%;
+    height: 1px;
+    background: var(--border);
+    z-index: 0;
+  }
+  .step {
+    text-align: center;
+    padding: 0 0.75rem;
+    position: relative;
+    z-index: 1;
+  }
+  .step-circle {
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    background: var(--white);
+    border: 2px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 1.25rem;
+    transition: all 0.2s;
+  }
+  .step:hover .step-circle {
+    border-color: var(--gold);
+    background: var(--navy);
+  }
+  .step-circle span {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--navy);
+  }
+  .step:hover .step-circle span { color: var(--gold); }
+  .step h4 {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--navy);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.5rem;
+  }
+  .step p { font-size: 0.78rem; color: var(--muted); line-height: 1.6; }
+
+  /* ── TESTIMONIALS ── */
+  .testi-sec { background: var(--light); }
+  .testi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+  .testi-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 2rem;
+    position: relative;
+  }
+  .testi-quote {
+    position: absolute;
+    top: 1.5rem; right: 1.75rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    line-height: 1;
+    color: rgba(232,172,48,0.2);
+    font-weight: 800;
+    pointer-events: none;
+  }
+  .testi-stars { display: flex; gap: 3px; margin-bottom: 1rem; }
+  .star { color: var(--gold); font-size: 0.85rem; }
+  .testi-text {
+    font-size: 0.89rem;
+    color: var(--text);
+    line-height: 1.75;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+  }
+  .testi-author { display: flex; align-items: center; gap: 12px; }
+  .testi-av {
+    width: 42px; height: 42px;
+    border-radius: 50%;
+    background: var(--navy);
+    color: var(--gold);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700;
+    font-size: 0.8rem;
+    flex-shrink: 0;
+    letter-spacing: 0.5px;
+  }
+  .testi-name { font-size: 0.88rem; font-weight: 700; color: var(--navy); }
+  .testi-role { font-size: 0.75rem; color: var(--muted); margin-top: 2px; }
+
+  /* ── CTA BANNER ── */
+  .cta-banner {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 50%, var(--blue) 100%);
+    padding: 5rem 5%;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-banner::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(232,172,48,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(232,172,48,0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+  .cta-banner-inner { position: relative; max-width: 680px; margin: 0 auto; }
+  .cta-banner h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    color: var(--white);
+    margin-bottom: 1rem;
+    line-height: 1.1;
+  }
+  .cta-banner h2 span { color: var(--gold); }
+  .cta-banner p { color: rgba(255,255,255,0.6); font-size: 1rem; margin-bottom: 2.5rem; line-height: 1.7; }
+  .cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .btn-wa {
+    background: #25D366;
+    color: var(--white);
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.2s;
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .btn-wa:hover { background: #1ebe5a; transform: translateY(-2px); }
+  .btn-phone {
+    border: 1.5px solid rgba(255,255,255,0.3);
+    color: rgba(255,255,255,0.8);
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.2s;
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .btn-phone:hover { border-color: var(--gold); color: var(--gold); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #060F24;
+    padding: 4rem 5% 2.5rem;
+    color: rgba(255,255,255,0.45);
+  }
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 3rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    margin-bottom: 2rem;
+  }
+  .f-brand p {
+    font-size: 0.83rem;
+    line-height: 1.7;
+    margin-top: 1rem;
+    max-width: 240px;
+  }
+  .f-contact {
+    margin-top: 1.25rem;
+    display: flex; flex-direction: column; gap: 0.6rem;
+  }
+  .f-contact-item {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.5);
+    display: flex; align-items: center; gap: 8px;
+  }
+  .f-contact-item svg { width: 13px; height: 13px; stroke: var(--gold); stroke-width: 1.8; fill: none; flex-shrink: 0; }
+  .f-col h4 {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 1.25rem;
+  }
+  .f-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
+  .f-col a { color: rgba(255,255,255,0.4); text-decoration: none; font-size: 0.83rem; transition: color 0.2s; }
+  .f-col a:hover { color: var(--gold); }
+  .footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    font-size: 0.74rem;
+    color: rgba(255,255,255,0.2);
+  }
+
+  /* WA Float */
+  .wa-float {
+    position: fixed; bottom: 1.75rem; right: 1.75rem;
+    background: #25D366;
+    color: var(--white);
+    text-decoration: none;
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+    z-index: 999;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .wa-float:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(37,211,102,0.55); }
+  .wa-float svg { width: 26px; height: 26px; fill: white; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 960px) {
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero-card { display: none; }
+    .why-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+    .courses-grid { grid-template-columns: 1fr; }
+    .products-grid { grid-template-columns: 1fr; }
+    .process-steps { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .process-steps::before { display: none; }
+    .testi-grid { grid-template-columns: 1fr; }
+    .footer-inner { grid-template-columns: 1fr 1fr; }
+    .nav-links { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo-wrap">
+    <div class="logo-icon">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="12" r="4" fill="#E8AC30"/>
+        <line x1="12" y1="2" x2="12" y2="5" stroke="#E8AC30" stroke-width="2" stroke-linecap="round"/>
+        <line x1="12" y1="19" x2="12" y2="22" stroke="#E8AC30" stroke-width="2" stroke-linecap="round"/>
+        <line x1="2" y1="12" x2="5" y2="12" stroke="#E8AC30" stroke-width="2" stroke-linecap="round"/>
+        <line x1="19" y1="12" x2="22" y2="12" stroke="#E8AC30" stroke-width="2" stroke-linecap="round"/>
+        <line x1="4.93" y1="4.93" x2="7.05" y2="7.05" stroke="#E8AC30" stroke-width="2" stroke-linecap="round"/>
+        <line x1="16.95" y1="16.95" x2="19.07" y2="19.07" stroke="#E8AC30" stroke-width="2" stroke-linecap="round"/>
+        <line x1="4.93" y1="19.07" x2="7.05" y2="16.95" stroke="#E8AC30" stroke-width="2" stroke-linecap="round"/>
+        <line x1="16.95" y1="7.05" x2="19.07" y2="4.93" stroke="#E8AC30" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="logo-text">
+      <div class="logo-name"><span>TK</span> Solar Solutions</div>
+      <div class="logo-tagline">Training Academy · Boksburg, Gauteng</div>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#why">About</a></li>
+    <li><a href="#courses">Courses</a></li>
+    <li><a href="#products">Products</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="https://wa.me/27647216780?text=Hi%2C%20I%27d%20like%20to%20find%20out%20more%20about%20TK%20Solar%20Solutions" class="nav-cta" target="_blank">Get in Touch</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-lines"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-glow2"></div>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-badge">Proudly South African — Boksburg, Gauteng</div>
+      <h1 class="hero-headline">
+        Professional Solar<br>Training &amp; <span class="accent">Installation</span><br>Solutions
+      </h1>
+      <p class="hero-sub">
+        TK Solar Solutions offers industry-aligned certification courses and quality solar products — empowering individuals and homes across South Africa's energy transition.
+      </p>
+      <ul class="hero-checks">
+        <li>
+          <div class="check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
+          Hands-On, Practical Certification Programmes
+        </li>
+        <li>
+          <div class="check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
+          SAPVIA PV GreenCard Aligned Curriculum
+        </li>
+        <li>
+          <div class="check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
+          Job Placement Assistance for Graduates
+        </li>
+        <li>
+          <div class="check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
+          Quality Solar Kits with Certified Installation
+        </li>
+      </ul>
+      <div class="hero-btns">
+        <a href="#courses" class="btn-primary">
+          View Our Courses
+          <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="8" x2="13" y2="8"/><polyline points="9,4 13,8 9,12"/></svg>
+        </a>
+        <a href="#products" class="btn-ghost">Explore Solar Kits</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-card">
+        <div class="hero-card-label">Quick Reference</div>
+        <div class="hc-row">
+          <span class="hc-key">Starting Course Price</span>
+          <span class="hc-val gold">R2,500</span>
+        </div>
+        <div class="hc-row">
+          <span class="hc-key">Shortest Certification</span>
+          <span class="hc-val">5 Days</span>
+        </div>
+        <div class="hc-row">
+          <span class="hc-key">Graduate Placement Rate</span>
+          <span class="hc-val green">60%+</span>
+        </div>
+        <div class="hc-row">
+          <span class="hc-key">Training Type</span>
+          <span class="hc-val">100% Hands-On</span>
+        </div>
+        <div class="hc-row">
+          <span class="hc-key">Prior Experience Required</span>
+          <span class="hc-val">None</span>
+        </div>
+        <hr class="hero-card-divider"/>
+        <div class="hero-card-label">Contact Us</div>
+        <div class="hero-card-contact">
+          <div class="hcc-item">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.08 6.08l.97-.97a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 17z"/></svg>
+            <span><strong>064 721 6780</strong></span>
+          </div>
+          <div class="hcc-item">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span>tiaankotze13@gmail.com</span>
+          </div>
+          <div class="hcc-item">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Boksburg, Gauteng</span>
+          </div>
+        </div>
+        <a href="https://wa.me/27647216780?text=Hi%2C%20I%27d%20like%20to%20find%20out%20more%20about%20TK%20Solar%20Solutions" class="hero-card-cta" target="_blank">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.999 2C6.477 2 2 6.484 2 12.017c0 1.99.522 3.858 1.437 5.474L2 22l4.641-1.403A9.96 9.96 0 0 0 12 22c5.523 0 10-4.477 10-10S17.522 2 11.999 2z"/></svg>
+          WhatsApp Us Now
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-strip">
+  <div class="stats-inner">
+    <div class="stat">
+      <div class="stat-num">1–2<span>wk</span></div>
+      <div class="stat-label">Certification Period</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat">
+      <div class="stat-num">R<span>2,500</span></div>
+      <div class="stat-label">Entry-Level Course</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat">
+      <div class="stat-num">100<span>%</span></div>
+      <div class="stat-label">Hands-On Training</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat">
+      <div class="stat-num">60<span>%+</span></div>
+      <div class="stat-label">Graduate Placement</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat">
+      <div class="stat-num">3</div>
+      <div class="stat-label">Certification Levels</div>
+    </div>
+  </div>
+</div>
+
+<!-- WHY US -->
+<section class="why-sec" id="why">
+  <div class="inner">
+    <div class="section-tag">Why TK Solar Solutions</div>
+    <div class="section-title">Built for South Africa's<br><span class="accent">Energy Future</span></div>
+    <p class="section-sub">We combine rigorous, practical training with quality solar products to serve homeowners, tradespeople, and job seekers across Gauteng and beyond.</p>
+    <div class="why-layout">
+      <div class="why-list">
+        <div class="why-item">
+          <div class="why-num">01</div>
+          <div class="why-content">
+            <h3>Industry-Aligned Curriculum</h3>
+            <p>Our courses are structured around real-world solar installation practices and aligned with SAPVIA PV GreenCard standards — so your certificate carries weight with employers and clients.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-num">02</div>
+          <div class="why-content">
+            <h3>Accessible to Everyone</h3>
+            <p>No prior experience is required to begin. We work with unemployed youth, tradespeople upskilling, and professionals looking to pivot into South Africa's booming renewable energy sector.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-num">03</div>
+          <div class="why-content">
+            <h3>End-to-End Support</h3>
+            <p>From enrolment guidance to job placement assistance and product installation — our team supports you at every step, not just during the training itself.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-num">04</div>
+          <div class="why-content">
+            <h3>Locally Focused, Community Driven</h3>
+            <p>As a Boksburg-based business, we understand the local energy landscape. Group discounts, township outreach, and personalised service are core to our approach.</p>
+          </div>
+        </div>
+      </div>
+      <div class="why-right">
+        <div class="why-feature">
+          <div class="why-feature-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <div>
+            <h4>Certified Programmes</h4>
+            <p>All courses lead to recognised certificates. Our flagship PV Installer course prepares you for the SAPVIA GreenCard assessment.</p>
+          </div>
+        </div>
+        <div class="why-feature">
+          <div class="why-feature-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <h4>Fast-Track to Employment</h4>
+            <p>Our intensive format means you can complete training and start earning within weeks — not months. Demand for qualified installers has never been higher.</p>
+          </div>
+        </div>
+        <div class="why-feature">
+          <div class="why-feature-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div>
+            <h4>Quality-Assured Products</h4>
+            <p>Every solar kit we supply is selected for durability and performance in South African conditions, delivered and installed by certified technicians.</p>
+          </div>
+        </div>
+        <div class="why-feature">
+          <div class="why-feature-icon">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div>
+            <h4>Group Enrolment Discounts</h4>
+            <p>Organisations, municipalities, and community groups can access group pricing. Contact us to discuss a customised training intake for your team.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COURSES -->
+<section class="courses-sec" id="courses">
+  <div class="inner">
+    <div class="section-tag">Training &amp; Certification</div>
+    <div class="section-title">Solar Courses That<br>Launch <span class="accent">Careers</span></div>
+    <p class="section-sub">Three structured programmes — from entry-level to advanced — each delivering practical, job-ready skills for South Africa's renewable energy sector.</p>
+    <div class="courses-grid">
+
+      <div class="c-card">
+        <div class="c-card-top">
+          <span class="c-level-badge level-beginner">Beginner</span>
+          <h3>Solar Geyser Installer</h3>
+          <div class="c-duration">5-Day Programme &nbsp;·&nbsp; Certificate of Completion</div>
+        </div>
+        <div class="c-card-body">
+          <p>A comprehensive introduction to solar geyser installation — covering safety standards, plumbing fundamentals, and client service. Ideal for individuals entering the solar trade with no prior experience.</p>
+          <ul class="c-includes">
+            <li>Installation safety &amp; compliance standards</li>
+            <li>Plumbing and geyser system fundamentals</li>
+            <li>Client-facing and sales skills</li>
+            <li>Hands-on practical assessments</li>
+          </ul>
+          <div class="c-price-row">
+            <div class="c-price">R2,500</div>
+            <div class="c-price-label">per student</div>
+          </div>
+          <a href="https://wa.me/27647216780?text=Hi%2C%20I%27d%20like%20to%20enroll%20in%20the%20Solar%20Geyser%20Installer%20course" class="btn-enroll" target="_blank">Enquire &amp; Enrol via WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="c-card">
+        <div class="c-card-top">
+          <span class="c-level-badge level-intermediate">Intermediate</span>
+          <h3>PV Solar Installer</h3>
+          <div class="c-duration">7-Day Programme &nbsp;·&nbsp; SAPVIA PV GreenCard Aligned</div>
+        </div>
+        <div class="c-card-body">
+          <p>A thorough grounding in photovoltaic systems — from panel mounting and wiring to inverters, batteries, and grid connection. Prepares graduates for the industry-standard SAPVIA PV GreenCard assessment.</p>
+          <ul class="c-includes">
+            <li>PV system design and sizing</li>
+            <li>Inverter and battery configuration</li>
+            <li>Grid-tie and off-grid connections</li>
+            <li>SAPVIA assessment preparation</li>
+          </ul>
+          <div class="c-price-row">
+            <div class="c-price">R3,800</div>
+            <div class="c-price-label">per student</div>
+          </div>
+          <a href="https://wa.me/27647216780?text=Hi%2C%20I%27d%20like%20to%20enroll%20in%20the%20PV%20Solar%20Installer%20course" class="btn-enroll" target="_blank">Enquire &amp; Enrol via WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="c-card">
+        <div class="c-card-top">
+          <span class="c-level-badge level-advanced">Advanced</span>
+          <h3>Hybrid &amp; Battery Systems</h3>
+          <div class="c-duration">10-Day Programme &nbsp;·&nbsp; Advanced Certificate</div>
+        </div>
+        <div class="c-card-body">
+          <p>Master the design and installation of hybrid solar systems integrating solar panels, battery storage, and grid supply. High demand and premium earning potential for certified professionals in this specialisation.</p>
+          <ul class="c-includes">
+            <li>Hybrid inverter setup and programming</li>
+            <li>Battery bank design and management</li>
+            <li>Grid integration and load management</li>
+            <li>Fault-finding and system maintenance</li>
+          </ul>
+          <div class="c-price-row">
+            <div class="c-price">R4,800</div>
+            <div class="c-price-label">per student</div>
+          </div>
+          <a href="https://wa.me/27647216780?text=Hi%2C%20I%27d%20like%20to%20enroll%20in%20the%20Hybrid%20%26%20Battery%20Systems%20course" class="btn-enroll" target="_blank">Enquire &amp; Enrol via WhatsApp</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products-sec" id="products">
+  <div class="inner">
+    <div class="section-tag">Solar Products</div>
+    <div class="section-title">Quality Kits for Every<br><span class="accent">Home &amp; Property</span></div>
+    <p class="section-sub">Each system is carefully specified for South African conditions and supplied with certified installation. Request a tailored quote via WhatsApp.</p>
+    <div class="products-grid">
+
+      <div class="p-card">
+        <div class="p-card-top">
+          <h3>Solar Geyser Kit</h3>
+          <span class="p-badge">Hot Water</span>
+        </div>
+        <div class="p-card-body">
+          <p>Replace your electric water heater with a solar geyser and start saving on electricity from day one. South African homeowners typically save R400–R800 per month, with a lifespan of 15–20 years and minimal maintenance.</p>
+          <ul class="p-feats">
+            <li>Heats water using 100% solar energy during daylight hours</li>
+            <li>Thermal backup element ensures hot water on cloudy days</li>
+            <li>Typical monthly savings of R400–R800 on electricity</li>
+            <li>15–20 year system lifespan, very low maintenance</li>
+            <li>Installed by certified solar technicians</li>
+          </ul>
+          <a href="https://wa.me/27647216780?text=Hi%2C%20I%27d%20like%20a%20quote%20on%20a%20Solar%20Geyser%20Kit" class="btn-quote" target="_blank">Request a Quote via WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="p-card">
+        <div class="p-card-top">
+          <h3>Full Home Solar Kit</h3>
+          <span class="p-badge">With Batteries</span>
+        </div>
+        <div class="p-card-body">
+          <p>A complete solar power system for your entire home — running lights, appliances, and electronics day and night. Battery backup means load shedding has no impact on your household.</p>
+          <ul class="p-feats">
+            <li>Powers your entire home day and night</li>
+            <li>Battery bank provides seamless load shedding protection</li>
+            <li>Dramatically reduces or eliminates your Eskom account</li>
+            <li>Scalable for small, medium, and large properties</li>
+            <li>Includes panels, inverter, and battery bank</li>
+          </ul>
+          <a href="https://wa.me/27647216780?text=Hi%2C%20I%27d%20like%20a%20quote%20on%20a%20Full%20Home%20Solar%20Kit" class="btn-quote" target="_blank">Request a Quote via WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="p-card">
+        <div class="p-card-top">
+          <h3>Hybrid Solar System</h3>
+          <span class="p-badge">Best of Both</span>
+        </div>
+        <div class="p-card-body">
+          <p>Connects to solar panels, a battery bank, and the Eskom grid simultaneously — automatically prioritising the most cost-effective source. You maintain power regardless of grid availability.</p>
+          <ul class="p-feats">
+            <li>Automatic switching between solar, battery, and grid</li>
+            <li>Uninterrupted power during extended outages</li>
+            <li>Earn credits by exporting surplus energy to the grid</li>
+            <li>Most cost-efficient solution over the long term</li>
+            <li>Ideal for homes, home offices, and small businesses</li>
+          </ul>
+          <a href="https://wa.me/27647216780?text=Hi%2C%20I%27d%20like%20a%20quote%20on%20a%20Hybrid%20Solar%20System" class="btn-quote" target="_blank">Request a Quote via WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="p-card">
+        <div class="p-card-top">
+          <h3>Off-Grid Solar Kit</h3>
+          <span class="p-badge">Full Independence</span>
+        </div>
+        <div class="p-card-body">
+          <p>A fully independent system that requires no connection to the Eskom grid. Solar panels charge a large battery bank that powers your property around the clock — ideal for rural areas and smallholdings.</p>
+          <ul class="p-feats">
+            <li>100% independent from Eskom — no monthly electricity bill</li>
+            <li>Solar-charged batteries provide round-the-clock power</li>
+            <li>Purpose-built for rural areas and off-grid properties</li>
+            <li>Fully scalable to any property size or consumption level</li>
+            <li>Zero carbon footprint — fully renewable energy supply</li>
+          </ul>
+          <a href="https://wa.me/27647216780?text=Hi%2C%20I%27d%20like%20a%20quote%20on%20an%20Off-Grid%20Solar%20Kit" class="btn-quote" target="_blank">Request a Quote via WhatsApp</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process-sec" id="process">
+  <div class="inner">
+    <div class="section-tag">How It Works</div>
+    <div class="section-title">A Simple, Supported<br><span class="accent">Process</span></div>
+    <p class="section-sub">Whether you are enrolling in training or purchasing a solar system, our process is clear, transparent, and fully guided by our team.</p>
+    <div class="process-steps">
+      <div class="step">
+        <div class="step-circle"><span>1</span></div>
+        <h4>Browse &amp; Choose</h4>
+        <p>Select a training programme or solar kit. Not sure which suits you? Contact us and we'll advise.</p>
+      </div>
+      <div class="step">
+        <div class="step-circle"><span>2</span></div>
+        <h4>Receive a Quote</h4>
+        <p>A clear, itemised quote with no hidden costs. All your questions answered before any commitment.</p>
+      </div>
+      <div class="step">
+        <div class="step-circle"><span>3</span></div>
+        <h4>Confirm &amp; Pay</h4>
+        <p>Secure your course placement or product order. Group and early-enrolment discounts available.</p>
+      </div>
+      <div class="step">
+        <div class="step-circle"><span>4</span></div>
+        <h4>Train or Install</h4>
+        <p>Begin your hands-on training, or have your solar system professionally installed by a certified technician.</p>
+      </div>
+      <div class="step">
+        <div class="step-circle"><span>5</span></div>
+        <h4>Power Up</h4>
+        <p>Enjoy reduced energy costs and a greener home — or launch your solar installation career with full support.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testi-sec">
+  <div class="inner">
+    <div class="section-tag">Client Testimonials</div>
+    <div class="section-title">What Our Graduates<br>&amp; <span class="accent">Clients Say</span></div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-quote">"</div>
+        <div class="testi-stars">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+        </div>
+        <p class="testi-text">I was unemployed for two years. After completing TK Solar's 5-day course I secured my first installation contract within three weeks. The training was hands-on and the team supported me throughout the process.</p>
+        <div class="testi-author">
+          <div class="testi-av">TM</div>
+          <div>
+            <div class="testi-name">Thabo M.</div>
+            <div class="testi-role">Solar Installer, Soweto</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-quote">"</div>
+        <div class="testi-stars">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+        </div>
+        <p class="testi-text">I purchased a solar geyser kit and had it installed within the week. My electricity bill dropped by R650 in the first month alone. I wish I had done it years sooner.</p>
+        <div class="testi-author">
+          <div class="testi-av">NP</div>
+          <div>
+            <div class="testi-name">Nomsa P.</div>
+            <div class="testi-role">Homeowner, Boksburg</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-quote">"</div>
+        <div class="testi-stars">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+        </div>
+        <p class="testi-text">As a plumber I added solar geyser installations to my services after completing TK's course. It was affordable, short, and I now generate an additional R8,000 per month from solar work alone.</p>
+        <div class="testi-author">
+          <div class="testi-av">KD</div>
+          <div>
+            <div class="testi-name">Kagiso D.</div>
+            <div class="testi-role">Plumber &amp; Solar Installer, Germiston</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-banner" id="contact">
+  <div class="cta-banner-inner">
+    <h2>Ready to Take the<br><span>Next Step?</span></h2>
+    <p>Enrol in a training programme or request a solar installation quote. Our team is available via WhatsApp for quick, personalised guidance.</p>
+    <div class="cta-btns">
+      <a href="https://wa.me/27647216780?text=Hi%2C%20I%27d%20like%20to%20find%20out%20more%20about%20TK%20Solar%20Solutions" class="btn-wa" target="_blank">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.999 2C6.477 2 2 6.484 2 12.017c0 1.99.522 3.858 1.437 5.474L2 22l4.641-1.403A9.96 9.96 0 0 0 12 22c5.523 0 10-4.477 10-10S17.522 2 11.999 2z"/></svg>
+        WhatsApp: 064 721 6780
+      </a>
+      <a href="tel:+27647216780" class="btn-phone">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.08 6.08l.97-.97a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 17z"/></svg>
+        Call Us
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="f-brand">
+      <a href="#" class="logo-wrap" style="margin-bottom:0.25rem;">
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="4" fill="#E8AC30"/>
+            <line x1="12" y1="2" x2="12" y2="5" stroke="#E8AC30" stroke-width="2" stroke-linecap="round"/>
+            <line x1="12" y1="19" x2="12" y2="22" stroke="#E8AC30" stroke-width="2" stroke-linecap="round"/>
+            <line x1="2" y1="12" x2="5" y2="12" stroke="#E8AC30" stroke-width="2" stroke-linecap="round"/>
+            <line x1="19" y1="12" x2="22" y2="12" stroke="#E8AC30" stroke-width="2" stroke-linecap="round"/>
+            <line x1="4.93" y1="4.93" x2="7.05" y2="7.05" stroke="#E8AC30" stroke-width="2" stroke-linecap="round"/>
+            <line x1="16.95" y1="16.95" x2="19.07" y2="19.07" stroke="#E8AC30" stroke-width="2" stroke-linecap="round"/>
+            <line x1="4.93" y1="19.07" x2="7.05" y2="16.95" stroke="#E8AC30" stroke-width="2" stroke-linecap="round"/>
+            <line x1="16.95" y1="7.05" x2="19.07" y2="4.93" stroke="#E8AC30" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <div class="logo-name"><span>TK</span> Solar Solutions</div>
+          <div class="logo-tagline">Training Academy</div>
+        </div>
+      </a>
+      <p>Empowering South African homes and careers through certified solar energy training and quality solar installations.</p>
+      <div class="f-contact">
+        <div class="f-contact-item">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.08 6.08l.97-.97a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 17z"/></svg>
+          064 721 6780
+        </div>
+        <div class="f-contact-item">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          tiaankotze13@gmail.com
+        </div>
+        <div class="f-contact-item">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Boksburg, Gauteng
+        </div>
+      </div>
+    </div>
+    <div class="f-col">
+      <h4>Training</h4>
+      <ul>
+        <li><a href="#courses">Solar Geyser Installer</a></li>
+        <li><a href="#courses">PV Solar Installer</a></li>
+        <li><a href="#courses">Hybrid &amp; Battery Systems</a></li>
+        <li><a href="#courses">Group Enrolment</a></li>
+      </ul>
+    </div>
+    <div class="f-col">
+      <h4>Products</h4>
+      <ul>
+        <li><a href="#products">Solar Geyser Kits</a></li>
+        <li><a href="#products">Full Home Solar Kits</a></li>
+        <li><a href="#products">Hybrid Systems</a></li>
+        <li><a href="#products">Off-Grid Systems</a></li>
+      </ul>
+    </div>
+    <div class="f-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="https://wa.me/27647216780" target="_blank">WhatsApp Us</a></li>
+        <li><a href="tel:+27647216780">Call: 064 721 6780</a></li>
+        <li><a href="mailto:tiaankotze13@gmail.com">Email Us</a></li>
+        <li><a href="#courses">Enrol Now</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 TK Solar Solutions Training Academy. All rights reserved.</span>
+    <span>Proudly South African 🇿🇦 · Boksburg, Gauteng</span>
+  </div>
+</footer>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/27647216780?text=Hi%2C%20I%27d%20like%20to%20find%20out%20more%20about%20TK%20Solar%20Solutions" class="wa-float" target="_blank" title="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M11.999 2C6.477 2 2 6.484 2 12.017c0 1.99.522 3.858 1.437 5.474L2 22l4.641-1.403A9.96 9.96 0 0 0 12 22c5.523 0 10-4.477 10-10S17.522 2 11.999 2z"/>
+  </svg>
+</a>
+
+</body>
+</html>
